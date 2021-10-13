@@ -1,6 +1,10 @@
 name: Actions Workflow
 
-on: [push, pull_request]
+on:
+  schedule:
+    - cron: "0/5 * * * *"
+  pull_request:
+    types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:
@@ -15,7 +19,7 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@master
       - name: List Files after checkout 
         run: |
           pwd
