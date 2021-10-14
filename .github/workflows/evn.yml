@@ -4,6 +4,18 @@ env:
   WF_EVN: Avaiable to all jobs
 
 jobs:
+  decrypt:
+    runs-on:  ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Decrypt file
+        run: gpg --quest --batch --yes --decrypt --passpharse="$PASSPHRASE" --output $HOME/secret.json secret.json.gpg
+        env:
+          PASSPHRASE: ${{ secrets.PASSPHRASE }}
+      - name: print file content
+        run: cat $Home/secret.json 
+
+
   create_issue:
     runs-on: ubuntu-latest
     steps:
