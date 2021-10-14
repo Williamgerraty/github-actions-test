@@ -11,7 +11,7 @@ jobs:
       - name: list files
         run: cd $Home && ls
       - name: Decrypt file
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output $HOME/secret.json secret.json.gpg
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output secret.json secret.json.gpg
         env:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
       - name: print file content
