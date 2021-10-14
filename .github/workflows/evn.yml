@@ -9,13 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: list files
-        run: cd $Home && ls
+        run:  ls
       - name: Decrypt file
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output secret.json secret.json.gpg
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output $Home/secret.json secret.json.gpg
         env:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
       - name: print file content
-        run: cat secret.json 
+        run: cat $Home/secret.json
 
 
   create_issue:
