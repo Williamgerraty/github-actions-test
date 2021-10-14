@@ -12,6 +12,10 @@ jobs:
       - name: log evn variables
         env:
           STEP_ENV: aVAILABLE TO ONLY THIS STEP
+        run:  |
+          echo: "WF_ENV: ${WF_ENV}"
+          echo: "WF_ENV: ${JOB_ENV}"
+          echo: "STEP_ENV: ${STEP_ENV}"  
 
       - name: log evn 2
         run:  |
