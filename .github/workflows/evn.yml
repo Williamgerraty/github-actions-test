@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Decrypt file
-        run: gpg --quest --batch --yes --decrypt --passpharse="$PASSPHRASE" --output $HOME/secret.json secret.json.gpg
+        run: gpg --quiet --batch --yes --decrypt --passpharse="$PASSPHRASE" --output $HOME/secret.json secret.json.gpg
         env:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
       - name: print file content
