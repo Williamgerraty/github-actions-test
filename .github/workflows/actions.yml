@@ -8,6 +8,8 @@ on:
   push:
     branches:
       - master
+      - 'feature/*'   
+      - 'feature/**' # all sub folders  
 
 jobs:
   run-github-actions:
