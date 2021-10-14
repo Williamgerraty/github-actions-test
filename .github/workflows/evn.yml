@@ -15,7 +15,7 @@ jobs:
         env:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
       - name: print file content
-        run: cat $Home/secret.json 
+        run: cat secret.json 
 
 
   create_issue:
