@@ -1,15 +1,16 @@
 name: Actions Workflow
 
-on:
+on: [pull_request]
+#on:
   #repository_dispatch:
    # types: [build]
   #pull_request:
   #  types: [closed, assigned, opened, reopened]
-  push:
-    branches:
-      - master
-      - 'feature/*'   
-      - 'feature/**' # all sub folders  
+ # push:
+ #   branches:
+ #     - master
+#      - 'feature/*'   
+ #     - 'feature/**' # all sub folders  
 
 jobs:
   run-github-actions:

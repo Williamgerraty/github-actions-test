@@ -11,11 +11,11 @@ jobs:
       - name: list files
         run:  ls
       - name: Decrypt file
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output $Home/secret.json secret.json.gpg
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output secret.json secret.json.gpg
         env:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
       - name: print file content
-        run: cat $Home/secret.json
+        run: cat secret.json
 
 
   create_issue:
