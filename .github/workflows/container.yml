@@ -21,6 +21,7 @@ jobs:
           args: -v
       - name: checkout the repo
         uses: actions/checkout@v1
+      - name: update permission
         run: chmod +x ./script.sh
       - name: run script
         uses: docker://node:16-alpine3.12
