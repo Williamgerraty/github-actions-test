@@ -20,7 +20,7 @@ jobs:
           args: -v
       - uses: actions/checkout@v1
       - name: list files
-        #uses: docker://node:16-alpine3.12
+        uses: docker://node:16-alpine3.12
         run: ls
       #- name: run a script
       #  uses: docker://node:16-alpine3.12
