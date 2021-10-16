@@ -19,11 +19,14 @@ jobs:
           entrypoint: /usr/local/bin/node
           args: -v
       - uses: actions/checkout@v1
-      - name: run a script
-        uses: docker://node:16-alpine3.12
-        with:
-          entrypoint: ./script.sh
-          args: "some string"
+      - name: list files
+        #uses: docker://node:16-alpine3.12
+        run: ls
+      #- name: run a script
+      #  uses: docker://node:16-alpine3.12
+      #  with:
+      #    entrypoint: ./script.sh
+      #    args: "some string"
 
   node-docker:
     runs-on: ubuntu-latest
