@@ -13,3 +13,5 @@ jobs:
        with:
         repository: Williamgerraty/infra-test-automation
         token: ${{ secrets.test }}
+     - name: list files
+       run: ls   
