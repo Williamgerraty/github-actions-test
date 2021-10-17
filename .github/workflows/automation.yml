@@ -7,11 +7,8 @@ jobs:
   create_issue:
     runs-on: ubuntu-latest
     steps:
-      - name:  pulls the python automation framework to workspace
-        run: |
-          git config --global init.defaultBranch master
-          git init
-          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/Williamgerraty/infra-test-automation.git"
-          git fetch
-          git checkout master
-          python3 -m pip install -r test-infrastructure/requirements.txt
+     - name: Check out my other private repo
+       uses: actions/checkout@master
+       with:
+        repository: Williamgerraty/infra-test-automation
+        token: ${{ secrets.test }}
