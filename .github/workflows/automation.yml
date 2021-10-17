@@ -1,0 +1,16 @@
+name: ENV Variables
+on: push
+env:
+  WF_EVN: Avaiable to all jobs
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  pulls the python automation framework to workspace
+        run: |
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/infra-test-infrastructure.git"
+          git fetch
+          git checkout master
+          python3 -m pip install -r test-infrastructure/requirements.txt
