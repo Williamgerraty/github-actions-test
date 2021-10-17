@@ -9,6 +9,7 @@ jobs:
     steps:
       - name:  pulls the python automation framework to workspace
         run: |
+          git config --global init.defaultBranch master
           git init
           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/infra-test-infrastructure.git"
           git fetch
