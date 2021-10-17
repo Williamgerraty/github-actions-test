@@ -14,4 +14,9 @@ jobs:
         repository: Williamgerraty/infra-test-automation
         token: ${{ secrets.test }}
      - name: list files
-       run: ls   
+       run: |
+          export AWS_SECRET_ACCESS_KEY=${{ secrect.key }}
+          export AWS_SECRET_ACCESS_KEY=${{ secrect.id }}
+          pip install -U pytest
+          python -m pip install boto3
+          
