@@ -15,8 +15,8 @@ jobs:
         token: ${{ secrets.test }}
      - name: list files
        run: |
-          export AWS_SECRET_ACCESS_KEY=${{ secrect.key }}
-          export AWS_SECRET_ACCESS_KEY=${{ secrect.id }}
+          export AWS_SECRET_ACCESS_KEY=${{ secret.key }}
+          export AWS_SECRET_ACCESS_KEY=${{ secret.id }}
           pip install -U pytest
           python -m pip install boto3
           
