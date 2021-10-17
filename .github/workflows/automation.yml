@@ -11,4 +11,4 @@ jobs:
      - name: Check out my other private repo
        uses: actions/checkout@v1
        with:
-        repository: Williamgerraty/infra-test-automation
+        repository: Williamgerraty/infra-test-automation.git
