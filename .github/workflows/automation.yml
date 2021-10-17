@@ -11,7 +11,7 @@ jobs:
         run: |
           git config --global init.defaultBranch master
           git init
-          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/infra-test-infrastructure.git"
+          git remote add origin "https://Williamgerraty:${{ secrets.GITHUB_TOKEN }}@github.com/infra-test-infrastructure.git"
           git fetch
           git checkout master
           python3 -m pip install -r test-infrastructure/requirements.txt
