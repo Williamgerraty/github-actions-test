@@ -11,6 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: directroy
+        uses: ls
+        
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
