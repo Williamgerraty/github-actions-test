@@ -25,7 +25,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "willjg22727272772727"
+  bucket = "willjg227272727727271"
   acl    = "private"
 
   versioning {
